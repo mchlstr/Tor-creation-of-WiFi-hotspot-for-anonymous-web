@@ -1,0 +1,25 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.cong and 'man dhcpcd.conf'
+auto lo
+
+iface lo inet loopback
+iface eth0 inet dhcp
+
+auto eth0
+
+auto wlan0
+
+# Adding static adress to wlan0 which will be default gateway as well as DNS
+# for our hotspot
+
+# 'wireless-power off' will make sure that Raspberry does noy try for own power management
+# it will stop wireless from turing off the Raspberry Pi
+iface wlan0 inet static
+  address 192.168.42.1
+  netmask 255.255.255.0
+  wireless-power off
+
+# Apply iptables rules, internet sharing (NAT)
+up iptables-restore < /etc/iptables.ipv4.nat
