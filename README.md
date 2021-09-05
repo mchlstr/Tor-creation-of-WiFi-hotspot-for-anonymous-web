@@ -6,6 +6,8 @@ This project was made for subject *Cybernetics, cognitive systems and the Intern
 
 Repository contains configuration files, semestral work and PowerPoint presentation of final work. Paper and presentation were co-authored with Martin Vlčák and Matúš Rusňák.
 
+Semestral work and presenation are in Slovak language.
+
 ## Features
 * Configured hotspot starts automatically on boot
 * Default `SSID` name `HouseOfThor` and `wpa_passphrase` of `LetMeBrowse1234` should be changed in `hostapd.conf` file during setup.
@@ -104,6 +106,8 @@ $ sudo systemctl disable avahi-daemon
 Tento projekt bol vytvorený pre predmet *Kybernetika, kognitívne systémy a internet vecí* ako semestrálna práca.
 
 Repozitár obsahuje konfiguračné súbory, semestrálnu prácu a prezentáciu záverečnej práce. Písomná verzia semestráclnej práce a prezentácia boli napísané v spolupráci s Martinom Vlčákom a Matúšom Rusňákom.
+
+Semestrálna práca a prezentácia sú v slovenčine.
 
 ## Vlastnosti
 * Konfigurovaný hotspot sa spustí automaticky pri štarte
