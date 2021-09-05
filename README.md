@@ -37,12 +37,16 @@ Semestral work and presenation are in Slovak language.
 3. Boot Raspberry Pi Zero W
 4. Update and upgrade system
 
-``sudo apt update && sudo apt upgrade``
+```
+sudo apt update && sudo apt upgrade
+```
 
 #### "Hostapd" installation and configuration
 1. Install hostapd
 
-`$ sudo apt install hostapd`
+```
+$ sudo apt install hostapd
+```
 
 2. create file`/etc/hostapd/hostapd.conf`and copy the content from `tor config files/hostapd.conf`. Change `ssid` and `wpa_passphrase` to your own
 
@@ -58,7 +62,9 @@ $ sudo systemctl start hostapd
 #### Installation and configuration of "udhcpd"
 1. Install udhcpd - part of busybox
 
-`$ sudo apt install busybox`
+```
+$ sudo apt install busybox
+```
 
 note: it may come preinstalled on raspian
 
@@ -75,7 +81,9 @@ $ sudo systemctl start udhcpd
 
 #### Installation and configuration of "tor"
 1. Install tor package
-`$ sudo apt install tor`
+```
+$ sudo apt install tor
+```
 2. Edit configuration file `etc/tor/torrc`. For the project purposes it is enough to have just lines of file as mentioned in `tor config files/torrc`. If you want to keep original file, look for like `Log notice file /var/log/tor/notices.log` and uncomment it. For the rest of the file, copy the transparent proxy setting at the end.
 3. Create the `notices.log` file change ownership to debain-tor and set permissions to 640
 ```
@@ -84,10 +92,11 @@ $ chown debian-tor /var/log/tor/notices.log
 $ chmod 640 /var/log/tor/notices.log
 ```
 4. Enable the automatic start of service
-`$ sudo update-rc.d tor enable`
-
+```
+$ sudo update-rc.d tor enable
+```
 #### iptables configuration
-1. Edit iptables located in ` /etc/iptables.ipv4` as shown in `tor config files/iptables.ipv4.nat`
+1. Edit iptables located in `/etc/iptables.ipv4` as shown in `tor config files/iptables.ipv4.nat`
 
 #### IP forwarding settings
 1. Edit `etc/systcl.conf`. Either replace content of original file by content in `tor config files/sysctl.conf` or by uncommenting line `net.ipv4.ip_forward=1` to enable IP forwarding and adding the `vm.swappiness` modifier to the end of the file
@@ -111,12 +120,12 @@ Semestrálna práca a prezentácia sú v slovenčine.
 
 ## Vlastnosti
 * Konfigurovaný hotspot sa spustí automaticky pri štarte
-* Predvolený názov `SSID`` HouseOfThor` a `wpa_passphrase` súboru` LetMeBrowse1234` by sa mal počas nastavovania zmeniť v súbore `hostapd.conf`.
+* Predvolený názov `SSID` `HouseOfThor` a `wpa_passphrase` súboru `LetMeBrowse1234` by sa mal počas nastavovania zmeniť v súbore `hostapd.conf`.
 
 ## Projekt bol vytvorený pomocou:
 * Raspberry Pi Zero W
 * 1 port USB sieť s 3 portmi USB HUB
-* HDMI kľúč pre pripojenie k monitoru
+* HDMI modul pre pripojenie k monitoru
 * USB klávesnica
 * Ethernetový kábel
 
@@ -137,19 +146,23 @@ Semestrálna práca a prezentácia sú v slovenčine.
 3. Spustite Raspberry Pi Zero W
 4. Aktualizujte systém
 
-"sudo apt update && sudo apt upgrade`
-
+```
+sudo apt update && sudo apt upgrade
+```
 #### Inštalácia a konfigurácia „Hostapd“
 1. Nainštalácia hostapd
 
-`$ sudo apt install hostapd`
+```
+$ sudo apt install hostapd
+```
 
 2. Vytvorte súbor `/etc/hostapd/hostapd.conf` a skopírujte obsah z `tor config files/hostapd.conf`. Zmeňte `ssid` a `wpa_passphrase` na svoje vlastné.
 
 3. Upravte súbor `etc/default/hostapd` odkomentovaním zoznamu `DEAMON_CONF` a pridaním absolútnej cesty k súboru hostpad.conf. Malo by to vyzerať takto `DEAMON_CONF ="/etc/hostapd/hostapd.conf "`
 
 4. Odmaskujte, povoľte a reštartujte hostapd deamon
-```$ sudo systemctl odmaskovať hostapd
+```
+$ sudo systemctl odmaskovať hostapd
 $ sudo systemctl povoliť hostapd
 $ sudo systemctl stop hostapd
 $ sudo systemctl start hostapd
@@ -158,8 +171,9 @@ $ sudo systemctl start hostapd
 #### Inštalácia a konfigurácia „udhcpd“
 1. Nainštalujte udhcpd - súčasť busyboxu
 
-`$ sudo apt install busybox`
-
+```
+$ sudo apt install busybox
+```
 poznámka: môže byť predinštalovaný na raspian
 
 2. Upravte `/etc/udhcpd.conf` ako je uvedené v časti `tor config files/udhcpd.conf` a `/etc/default/udhcpd` v časti `tor config files/udhcpd`
@@ -175,7 +189,9 @@ $ sudo systemctl start udhcpd
 
 #### Inštalácia a konfigurácia súboru „tor“
 1. Nainštalujte balík tor
-`$ sudo apt install tor`
+```
+$ sudo apt install tor
+```
 2. Upravte konfiguračný súbor `etc/tor/torrc`. Na účely projektu stačí mať iba riadky súboru, ako je uvedené v `tor config files/torrc`. Ak si chcete ponechať pôvodný súbor, vyhľadajte výraz `Log notice file /var/log/tor/notices.log` a zrušte jeho označenie. Pre zvyšok súboru skopírujte nastavenie transparentného servera proxy na konci.
 3. Vytvorte súbor `notices.log`, zmeňte vlastníctvo suboru na debain-tor a nastavte povolenia na 640
 ```
@@ -184,10 +200,11 @@ $ chown debian-tor /var/log/tor/notices.log
 $ chmod 640 /var/log/tor/notices.log
 ```
 4. Povoľte automatické spustenie služby
-`$ sudo update-rc.d tor enable`
-
+```
+$ sudo update-rc.d tor enable
+```
 #### Konfigurácia iptables
-1. Upravte iptables nachádzajúce sa v `/etc/iptables.ipv4`, ako je uvedené v `tor konfiguračných súboroch/iptables.ipv4.nat`
+1. Upravte iptables nachádzajúce sa v `/etc/iptables.ipv4`, ako je uvedené v `tor config files/iptables.ipv4.nat`
 
 #### Nastavenia presmerovania IP
 1. Upravte `etc/systcl.conf`. Ak chcete povoliť presmerovanie IP a pridať modifikátor `vm.swappiness` na koniec súboru, buď nahraďte obsah pôvodného súboru obsahom v konfiguračnom súbore `tor config files/sysctl.conf` alebo odkomentovaním riadka `net.ipv4.ip_forward = 1`.
